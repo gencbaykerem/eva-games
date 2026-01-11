@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>EVA Games | Ücretsiz Oyunlar</title>
+
+  <!-- Site ikonu (title yanındaki logo) -->
+  <link rel="icon" type="image/png" sizes="32x32"
+        href="https://img.freepik.com/premium-vector/initial-e-gaming-logo-design-template-inspiration-vector-illustration_556641-720.jpg">
+
+  <meta name="description" content="Ücretsiz ve demo oyunları güvenli şekilde indir.">
+
+  <!-- CSS dosyası -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  let slides = document.querySelectorAll(".slide");
+  let index = 0;
+
+  setInterval(() => {
+    slides[index].classList.remove("active");
+    index = (index + 1) % slides.length;
+    slides[index].classList.add("active");
+  }, 3000);
+});
+</script>
+
+
+<body>
+
+<header class="top">
+  <h1>EVA-<span>Games</span></h1>
+
+  <!-- Arama Kutusu -->
+  <input
+    type="text"
+    id="searchInput"
+    placeholder="Oyun ara..."
+    onkeyup="searchGames()"
+  >
+
+  <nav>
+    <a href="#">Ana Sayfa</a>
+    <a href="#">Ücretsiz Oyunlar</a>
+    <a href="#">Haberler</a>
+  </nav>
+</header>
+
+<section class="slider">
+  <div class="slides">
+    <img src="https://cmsassets.rgpub.io/sanity/images/dsfx7636/news_live/d0db663bf28844dcbd744935cdd8c71083e0031c-5600x3150.jpg" class="slide active">
+    <img src="https://cdn2.unrealengine.com/fneco-2025-keyart-thumb-1920x1080-de84aedabf4d.jpg" class="slide">
+    <img src="https://img.tamindir.com/2025/09/476794/egs-rocketleague-psyonixllc-s3-2560x1440-18eac9b5df1028fdcd5bad480ab6b085.jpg" class="slide">
+    <img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/10/header.jpg?t=1745368572"" class="slide">
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSgD_NwNx-SlUYVO1nF5Wn8RkHCSYY2Q-XIVA&s" class="slide">
+    <img src="https://i.pcmag.com/imagery/reviews/03Zv0ZUOeqGtbYk612UMWbg-18..v1593116274.png" class="slide">
+  </div>
+</section>
+
+<main class="games">
+
+  <div class="game-card">
+    <img src="https://cmsassets.rgpub.io/sanity/images/dsfx7636/news_live/d0db663bf28844dcbd744935cdd8c71083e0031c-5600x3150.jpg" alt="Valorant">
+    <h3>Valorant</h3>
+    <p>Ücretsiz FPS oyunu</p>
+    <a href="https://playvalorant.com/tr-tr/" class="btn">İNDİR</a>
+  </div>
+
+  <div class="game-card">
+    <img src="https://img.tamindir.com/2025/09/476794/egs-rocketleague-psyonixllc-s3-2560x1440-18eac9b5df1028fdcd5bad480ab6b085.jpg" alt="Rocket League">
+    <h3>Rocket League</h3>
+    <p>Ücretsiz spor oyunu</p>
+    <a href="https://www.rocketleague.com/en/" class="btn">İNDİR</a>
+  </div>
+
+  <div class="game-card">
+    <img src="https://cdn2.unrealengine.com/fneco-2025-keyart-thumb-1920x1080-de84aedabf4d.jpg" alt="Fortnite">
+    <h3>Fortnite</h3>
+    <p>Battle Royale</p>
+    <a href="https://www.fortnite.com/?lang=tr" class="btn">İNDİR</a>
+  </div>
+
+   <div class="game-card">
+    <img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/10/header.jpg?t=1745368572" alt="CS">
+    <h3>CS 1.6</h3>
+    <p>Ücretsiz FPS oyunu</p>
+    <a href="https://www.cs16indir.com/cs16indir.html" class="btn">İNDİR</a>
+  </div>
+
+  <div class="game-card">
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSgD_NwNx-SlUYVO1nF5Wn8RkHCSYY2Q-XIVA&s" alt="half-life">
+    <h3>Half-Life</h3>
+    <p>Ücretsiz FPS oyunu</p>
+    <a href="https://csduragi.com/half-life/half-life-indir-ve-oyna.html" class="btn">İNDİR</a>
+  </div>
+
+  <div class="game-card">
+    <img src="https://i.pcmag.com/imagery/reviews/03Zv0ZUOeqGtbYk612UMWbg-18..v1593116274.png" alt="hotspot-shield">
+    <h3>Hotspot Shield</h3>
+    <p>Ücretsiz VPN</p>
+    <a href="https://www.gezginler.net/indir/hotspot-shield.html" class="btn">İNDİR</a>
+  </div>
+
+</main>
+
+<footer>
+  <p>© 2026 EVA Games – Tüm hakları saklıdır.</p>
+</footer>
+
+<script>
+function searchGames() {
+  let input = document.getElementById("searchInput").value.toLowerCase();
+  let games = document.getElementsByClassName("game-card");
+
+  for (let i = 0; i < games.length; i++) {
+    let title = games[i].getElementsByTagName("h3")[0].innerText.toLowerCase();
+    games[i].style.display = title.includes(input) ? "block" : "none";
+  }
+}
+</script>
+
+</body>
+</html>
